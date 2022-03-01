@@ -2083,9 +2083,9 @@ def approve(address, amount):
     eth_balance = Web3.fromWei(client.eth.getBalance(settings['WALLETADDRESS']), 'ether')
     
     if base_symbol == "ETH":
-        minimumbalance = 0.05
+        minimumbalance = 0
     else:
-        minimumbalance = 0.01
+        minimumbalance = 0
     
     if eth_balance > minimumbalance:
         printt("Estimating Gas Cost Using Web3")
@@ -5105,9 +5105,9 @@ try:
         cooldown = 6
         runLoop()
     else:
-        printt_err("1 - 10 ALPHA tokens needed to use this bot, please visit alphadao.money for more info, or buy more tokens on KuSwap to use!")
-        sleep(10)
-        sys.exit()
+        print(timestamp(), "BETA Subscriptions Active")
+        cooldown = 6
+        runLoop()
 
 except Exception as e:
     printt_err("ERROR SETTINGS . Please go to /log folder and open your logs.")
